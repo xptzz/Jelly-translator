@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "鼠译器",
+  "version": "2.0",
+  "description": "Jelly Translator · 选中文字自动翻译，一键存入 GitHub 知识库",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://api-free.deepl.com/*",
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "action": {
+    "default_title": "鼠译器"
+  }
+}
