@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠译器 · 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="logo">🐭</div>
+      <h1>鼠译器</h1>
+      <p class="subtitle">Jelly Translator · 设置</p>
+    </div>
+
+    <section>
+      <h2>翻译 API</h2>
+      <div class="field">
+        <label for="deeplKey">DeepL API Key</label>
+        <input type="password" id="deeplKey" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx" autocomplete="off">
+        <a class="hint-link" href="https://www.deepl.com/pro-api" target="_blank">获取免费 API Key →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>GitHub 知识库</h2>
+      <div class="field">
+        <label for="githubToken">Personal Access Token</label>
+        <input type="password" id="githubToken" placeholder="ghp_..." autocomplete="off">
+        <a class="hint-link" href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">创建 Token（需勾选 repo 权限）→</a>
+      </div>
+      <div class="field">
+        <label for="githubOwner">GitHub 用户名</label>
+        <input type="text" id="githubOwner" placeholder="your-username">
+      </div>
+      <div class="field">
+        <label for="githubRepo">仓库名</label>
+        <input type="text" id="githubRepo" placeholder="second-brain">
+      </div>
+
+      <div class="init-row">
+        <button id="initRepo" class="btn-secondary">🚀 初始化知识库</button>
+        <span id="initStatus" class="status"></span>
+      </div>
+      <p class="hint">填写 Token 和仓库名后点击，自动创建仓库并建好 vocab 文件夹，无需手动操作。用户名字段将自动填入。</p>
+    </section>
+
+    <div class="save-row">
+      <button id="save" class="btn-primary">保存设置</button>
+      <span id="saveStatus" class="status"></span>
+    </div>
+
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
