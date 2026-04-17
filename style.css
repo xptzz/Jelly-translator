@@ -1,0 +1,115 @@
+#selection-bubble {
+  position: absolute;
+  min-width: 180px;
+  max-width: 420px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  pointer-events: none;
+  z-index: 2147483647;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#selection-bubble.result,
+#selection-bubble.picker {
+  pointer-events: auto;
+}
+
+#selection-bubble.loading {
+  color: #6c7086;
+  font-style: italic;
+}
+
+#selection-bubble.error {
+  background: #3b1212;
+  color: #f38ba8;
+  font-size: 13px;
+}
+
+#selection-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #1e1e2e;
+}
+
+.bubble-text {
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* 按钮行 */
+.bubble-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* 语言选择按钮 */
+.bubble-lang-btn {
+  padding: 5px 14px;
+  background: #313244;
+  color: #cdd6f4;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.bubble-lang-btn:hover {
+  background: #45475a;
+}
+
+/* 🔊 朗读按钮 */
+.bubble-icon-btn {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.bubble-icon-btn:hover {
+  background: #313244;
+}
+
+/* 学习按钮 */
+.bubble-learn-btn {
+  padding: 5px 16px;
+  background: #89b4fa;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.bubble-learn-btn:hover  { background: #b4d0fe; }
+.bubble-learn-btn:active { transform: scale(0.96); }
+.bubble-learn-btn.saved  { background: #a6e3a1; cursor: default; }
+.bubble-learn-btn:disabled { opacity: 0.7; cursor: not-allowed; }
